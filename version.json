@@ -1,7 +1,7 @@
 {
-  "code": 25,
-  "name": "1.19.2",
+  "code": 26,
+  "name": "1.22",
   "min": 0,
   "url": "https://github.com/helicasecoded/schoolsystem-site/releases/latest/download/SchoolSystem.apk",
-  "notes": "Bug fixes and improvements."
+  "notes": "New: app lock (pattern, PIN or password), fee receipt on WhatsApp, safer automatic SMS sending and data sync fix."
 }
