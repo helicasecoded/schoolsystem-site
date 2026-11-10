@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pay school fees</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#f4f6fb;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center}
+.c{background:#fff;border-radius:16px;padding:24px;max-width:380px;width:92%;box-shadow:0 4px 20px rgba(0,0,0,.08);text-align:center}
+h1{font-size:20px;color:#1e3a8a;margin:0 0 6px}
+.amt{font-size:34px;font-weight:700;margin:10px 0}
+a.b{display:block;background:#1e3a8a;color:#fff;text-decoration:none;padding:14px;border-radius:12px;font-weight:600;margin-top:14px}
+small{color:#6b7280}
+code{background:#eef2ff;padding:2px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="c">
+  <h1 id="pn">School fees</h1>
+  <div class="amt" id="am"></div>
+  <div id="tn"></div>
+  <a class="b" id="go" href="#">Pay with UPI app</a>
+  <p><small>UPI ID: <code id="pa"></code></small></p>
+  <p><small>If the button does not open your UPI app, copy the UPI ID above and pay from any UPI app.</small></p>
+</div>
+<script>
+var q = new URLSearchParams(location.search);
+var pa = q.get('pa') || '', pn = q.get('pn') || 'School', am = q.get('am') || '', tn = q.get('tn') || 'Fees';
+document.getElementById('pn').textContent = pn;
+document.getElementById('pa').textContent = pa;
+document.getElementById('tn').textContent = tn;
+if (am) document.getElementById('am').textContent = '\u20B9' + am;
+var u = 'upi://pay?pa=' + encodeURIComponent(pa) + '&pn=' + encodeURIComponent(pn) +
+        (am ? '&am=' + encodeURIComponent(am) : '') + '&cu=INR&tn=' + encodeURIComponent(tn);
+document.getElementById('go').href = u;
+if (pa) setTimeout(function () { location.href = u; }, 400);
+</script>
+</body>
+</html>
