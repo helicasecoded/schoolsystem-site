@@ -1,6 +1,6 @@
 {
-  "code": 37,
-  "name": "1.33",
+  "code": 38,
+  "name": "1.34",
   "min": 0,
   "url": "https://github.com/helicasecoded/schoolsystem-site/releases/latest/download/SchoolSystem.apk",
   "notes": "New: app lock (pattern, PIN or password), fee receipt on WhatsApp, safer automatic SMS sending and data sync fix."
